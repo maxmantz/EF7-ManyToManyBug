@@ -14,7 +14,10 @@ The project contains the following:
  - run the application and navigate to `api/students`
 
 #### Scenario
-The database is seeded with 100 students and courses. Each student is then assigned 50 courses. So the expected output of the controller is to see 50 course Ids in the JSON file.
+The database is seeded with 100 students and courses. Each student is then assigned 50 courses. So the expected output of the controller is to see 50 course IDs for each student in the JSON file.
+
+#### Bug symptoms
+WHen the `Take()`exceeds 60, the number of courses for each student is only one, sometimes tow instead of the expected fifty.
 
 
 #### Controller methods
