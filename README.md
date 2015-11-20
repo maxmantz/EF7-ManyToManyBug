@@ -17,7 +17,7 @@ The project contains the following:
 The database is seeded with 100 students and courses. Each student is then assigned 50 courses. So the expected output of the controller is to see 50 course IDs for each student in the JSON file.
 
 #### Bug symptoms
-When the `Take()`exceeds 60, the number of course IDs for each student is only one, sometimes tow instead of the expected fifty.
+When the `Take()`exceeds 60, the number of course IDs for each student is far below the expected fifty.
 
 
 #### Controller methods
