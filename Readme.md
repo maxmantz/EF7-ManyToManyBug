@@ -9,16 +9,18 @@ The project contains the following:
   - a `StudentsController` demonstrating the bug.
 
 #### Usage
- - Edit the connection string in `Startup.cs`to point to your database (I have been using SQL Server Express 2014),
- - run the migrations command `dnx ef database update` to create the database if it doesn`t exist,
+ - Edit the connection string in `Startup.cs`to point to your database (I have been using SQL Server Express 2014) or switch the flag during startup to load the in memory database,
+ - when using SQL Server, run the migrations command `dnx ef database update` to create the database if it doesn`t exist,
  - run the application and navigate to `api/students`
+
+ Example query: `http://localhost:port/api/students?offset=0&limit=60`
 
 #### Scenario
 The database is seeded with 100 students and courses. Each student is then assigned 50 courses. So the expected output of the controller is to see 50 course IDs for each student in the JSON file.
 
 #### Bug symptoms
 When the `Take()`exceeds 60, the number of course IDs for each student is far below the expected fifty.
-
+UPDATE: I can confirm that this bug does NOT appear when using the in memory database.
 
 #### Controller methods
 The `StudentsController` has four methods, all with integer request parameters offset & limit, showing different approaches to demonstrate the bug.
