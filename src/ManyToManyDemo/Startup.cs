@@ -35,10 +35,21 @@ namespace ManyToManyDemo
 
             services.AddLogging();
 
-            services.AddEntityFramework()
-                .AddSqlServer()
-                .AddDbContext<DemoContext>(
-                    o => o.UseSqlServer(@"Server=.\SQLEXPRESS;Database=ManyToManyDemo;integrated security=True;"));
+            bool sqlServer = false;
+
+            if (sqlServer)
+            {
+                services.AddEntityFramework()
+                    .AddSqlServer()
+                    .AddDbContext<DemoContext>(
+                        o => o.UseSqlServer(@"Server=.\SQLEXPRESS;Database=ManyToManyDemo;integrated security=True;"));
+            }
+            else
+            {
+                services.AddEntityFramework()
+                    .AddInMemoryDatabase()
+                    .AddDbContext<DemoContext>(o => o.UseInMemoryDatabase());
+            }
 
             services.AddMvc();
         }

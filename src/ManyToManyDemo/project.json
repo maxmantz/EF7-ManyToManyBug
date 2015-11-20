@@ -6,6 +6,7 @@
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
     "EntityFramework.SqlServer": "7.0.0-beta8",
+    "EntityFramework.InMemory": "7.0.0-beta8",
     "EntityFramework.Commands": "7.0.0-beta8",
     "AutoMapper": "4.1.1",
     "Microsoft.AspNet.Mvc": "6.0.0-beta8",

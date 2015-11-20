@@ -77,6 +77,24 @@
           "lib/dnx451/EntityFramework.Core.dll": {}
         }
       },
+      "EntityFramework.InMemory/7.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.InMemory.dll": {}
+        }
+      },
       "EntityFramework.Relational/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -1710,6 +1728,18 @@
         },
         "runtime": {
           "lib/dnxcore50/EntityFramework.Core.dll": {}
+        }
+      },
+      "EntityFramework.InMemory/7.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8"
+        },
+        "compile": {
+          "lib/dotnet/EntityFramework.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/EntityFramework.InMemory.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-beta8": {
@@ -4082,6 +4112,24 @@
           "lib/dnx451/EntityFramework.Core.dll": {}
         }
       },
+      "EntityFramework.InMemory/7.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.InMemory.dll": {}
+        }
+      },
       "EntityFramework.Relational/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -5709,6 +5757,24 @@
         },
         "runtime": {
           "lib/dnx451/EntityFramework.Core.dll": {}
+        }
+      },
+      "EntityFramework.InMemory/7.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net45/EntityFramework.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/net45/EntityFramework.InMemory.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-beta8": {
@@ -7347,6 +7413,18 @@
         },
         "runtime": {
           "lib/dnxcore50/EntityFramework.Core.dll": {}
+        }
+      },
+      "EntityFramework.InMemory/7.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8"
+        },
+        "compile": {
+          "lib/dotnet/EntityFramework.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/EntityFramework.InMemory.dll": {}
         }
       },
       "EntityFramework.Relational/7.0.0-beta8": {
@@ -10151,6 +10229,18 @@
           "lib/dnxcore50/EntityFramework.Core.dll": {}
         }
       },
+      "EntityFramework.InMemory/7.0.0-beta8": {
+        "type": "package",
+        "dependencies": {
+          "EntityFramework.Core": "7.0.0-beta8"
+        },
+        "compile": {
+          "lib/dotnet/EntityFramework.InMemory.dll": {}
+        },
+        "runtime": {
+          "lib/dotnet/EntityFramework.InMemory.dll": {}
+        }
+      },
       "EntityFramework.Relational/7.0.0-beta8": {
         "type": "package",
         "dependencies": {
@@ -12945,6 +13035,20 @@
         "lib/dotnet/EntityFramework.Core.xml",
         "lib/net45/EntityFramework.Core.dll",
         "lib/net45/EntityFramework.Core.xml"
+      ]
+    },
+    "EntityFramework.InMemory/7.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "eBZhjl0q4AgAqqD7GTrqRzb4TI43Dclu3yo2TLNzGQoa/i4kbsds5atuANYotUmVdzg2EE0h4ROiSsoJ4TrxhA==",
+      "files": [
+        "EntityFramework.InMemory.7.0.0-beta8.nupkg",
+        "EntityFramework.InMemory.7.0.0-beta8.nupkg.sha512",
+        "EntityFramework.InMemory.nuspec",
+        "lib/dotnet/EntityFramework.InMemory.dll",
+        "lib/dotnet/EntityFramework.InMemory.xml",
+        "lib/net45/EntityFramework.InMemory.dll",
+        "lib/net45/EntityFramework.InMemory.xml"
       ]
     },
     "EntityFramework.Relational/7.0.0-beta8": {
@@ -17214,6 +17318,7 @@
       "Microsoft.AspNet.IISPlatformHandler >= 1.0.0-beta8",
       "Microsoft.AspNet.Server.Kestrel >= 1.0.0-beta8",
       "EntityFramework.SqlServer >= 7.0.0-beta8",
+      "EntityFramework.InMemory >= 7.0.0-beta8",
       "EntityFramework.Commands >= 7.0.0-beta8",
       "AutoMapper >= 4.1.1",
       "Microsoft.AspNet.Mvc >= 6.0.0-beta8",
