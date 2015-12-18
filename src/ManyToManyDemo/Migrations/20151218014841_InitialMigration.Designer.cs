@@ -8,17 +8,19 @@ using ManyToManyDemo.Data;
 namespace ManyToManyDemo.Migrations
 {
     [DbContext(typeof(DemoContext))]
-    [Migration("20151120111957_InitialMigration")]
+    [Migration("20151218014841_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
-                .Annotation("ProductVersion", "7.0.0-beta8-15964")
-                .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "7.0.0-rc2-16579")
+                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("ManyToManyDemo.Data.Course", b =>
                 {
+                    b.ToTable("Course");
+
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
@@ -29,6 +31,8 @@ namespace ManyToManyDemo.Migrations
 
             modelBuilder.Entity("ManyToManyDemo.Data.Student", b =>
                 {
+                    b.ToTable("Student");
+
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
@@ -39,22 +43,30 @@ namespace ManyToManyDemo.Migrations
 
             modelBuilder.Entity("ManyToManyDemo.Data.StudentCourse", b =>
                 {
+                    b.ToTable("StudentCourse");
+
                     b.Property<int>("StudentId");
 
                     b.Property<int>("CourseId");
 
                     b.HasKey("StudentId", "CourseId");
+
+                    b.HasIndex("CourseId");
+
+                    b.HasIndex("StudentId");
                 });
 
             modelBuilder.Entity("ManyToManyDemo.Data.StudentCourse", b =>
                 {
                     b.HasOne("ManyToManyDemo.Data.Course")
                         .WithMany()
-                        .ForeignKey("CourseId");
+                        .HasForeignKey("CourseId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("ManyToManyDemo.Data.Student")
                         .WithMany()
-                        .ForeignKey("StudentId");
+                        .HasForeignKey("StudentId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
         }
     }

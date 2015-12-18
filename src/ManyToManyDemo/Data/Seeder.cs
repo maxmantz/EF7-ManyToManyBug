@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace ManyToManyDemo.Data
 {
     using Microsoft.Data.Entity;
-    using Microsoft.Framework.Logging;
+    using Microsoft.Extensions.Logging;
 
     public class Seeder
     {

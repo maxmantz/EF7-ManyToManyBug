@@ -15,6 +15,8 @@
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Student>().HasMany(e => e.StudentCourses);
+            modelBuilder.Entity<Course>().HasMany(e => e.StudentCourses);
             modelBuilder.Entity<StudentCourse>().HasKey(x => new { x.StudentId, x.CourseId });
             base.OnModelCreating(modelBuilder);
         }

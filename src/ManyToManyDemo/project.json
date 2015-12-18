@@ -3,15 +3,14 @@
   "version": "1.0.0-*",
 
   "dependencies": {
-    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-beta8",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta8",
-    "EntityFramework.SqlServer": "7.0.0-beta8",
-    "EntityFramework.InMemory": "7.0.0-beta8",
-    "EntityFramework.Commands": "7.0.0-beta8",
     "AutoMapper": "4.1.1",
-    "Microsoft.AspNet.Mvc": "6.0.0-beta8",
-    "Microsoft.Framework.Logging.Debug": "1.0.0-beta8",
-    "Microsoft.AspNet.Owin": "1.0.0-beta8"
+    "EntityFramework.Commands": "7.0.0-rc2-16579",
+    "EntityFramework.MicrosoftSqlServer": "7.0.0-rc2-16579",
+    "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc2-16018",
+    "Microsoft.AspNet.Mvc": "6.0.0-rc2-16679",
+    "Microsoft.AspNet.Owin": "1.0.0-rc2-16067",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc2-16183",
+    "Microsoft.Extensions.Logging.Debug": "1.0.0-rc2-15924"
   },
 
   "commands": {
@@ -20,8 +19,7 @@
   },
 
   "frameworks": {
-    "dnx451": { },
-    "dnxcore50": { }
+    "dnx451": { }
   },
 
   "exclude": [

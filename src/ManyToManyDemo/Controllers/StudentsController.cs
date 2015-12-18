@@ -58,15 +58,17 @@ namespace ManyToManyDemo.Controllers
                 .Take(limit)
                 .ToListAsync();
 
+            var dtos = new List<StudentDto>();
+
             foreach (var student in students)
             {
-                foreach (var studentCourse in student.StudentCourses)
-                {
-                    student.Courses.Add(studentCourse.Course);
-                }
+                var dto = Mapper.Map<StudentDto>(student);
+                var courseIds = student.StudentCourses.Select(sc => sc.CourseId);
+                dto.Courses = courseIds.ToList();
+                dtos.Add(dto);
             }
 
-            return this.Ok(Mapper.Map<ICollection<StudentDto>>(students));
+            return this.Ok(dtos);
         }
 
         /// <summary>
@@ -93,15 +95,17 @@ namespace ManyToManyDemo.Controllers
                     .ThenInclude(sc => sc.Course)
                     .ToListAsync();
 
+            var dtos = new List<StudentDto>();
+
             foreach (var student in students)
             {
-                foreach (var studentCourse in student.StudentCourses)
-                {
-                    student.Courses.Add(studentCourse.Course);
-                }
+                var dto = Mapper.Map<StudentDto>(student);
+                var courseIds = student.StudentCourses.Select(sc => sc.CourseId);
+                dto.Courses = courseIds.ToList();
+                dtos.Add(dto);
             }
 
-            return this.Ok(Mapper.Map<ICollection<StudentDto>>(students));
+            return this.Ok(dtos);
         }
 
         /// <summary>
@@ -130,15 +134,17 @@ namespace ManyToManyDemo.Controllers
 
             students = students.Skip(offset).Take(limit).ToList();
 
+            var dtos = new List<StudentDto>();
+
             foreach (var student in students)
             {
-                foreach (var studentCourse in student.StudentCourses)
-                {
-                    student.Courses.Add(studentCourse.Course);
-                }
+                var dto = Mapper.Map<StudentDto>(student);
+                var courseIds = student.StudentCourses.Select(sc => sc.CourseId);
+                dto.Courses = courseIds.ToList();
+                dtos.Add(dto);
             }
 
-            return this.Ok(Mapper.Map<ICollection<StudentDto>>(students));
+            return this.Ok(dtos);
         }
 
         /// <summary>
@@ -167,15 +173,17 @@ namespace ManyToManyDemo.Controllers
 
             students = students.Skip(offset).Take(limit).ToList();
 
+            var dtos = new List<StudentDto>();
+
             foreach (var student in students)
             {
-                foreach (var studentCourse in student.StudentCourses)
-                {
-                    student.Courses.Add(studentCourse.Course);
-                }
+                var dto = Mapper.Map<StudentDto>(student);
+                var courseIds = student.StudentCourses.Select(sc => sc.CourseId);
+                dto.Courses = courseIds.ToList();
+                dtos.Add(dto);
             }
 
-            return this.Ok(Mapper.Map<ICollection<StudentDto>>(students));
+            return this.Ok(dtos);
         }
     }
 }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
-using Microsoft.Framework.DependencyInjection;
+﻿using Microsoft.AspNet.Builder;
 
 namespace ManyToManyDemo
 {
@@ -14,7 +8,8 @@ namespace ManyToManyDemo
     using ManyToManyDemo.Dtos;
 
     using Microsoft.Data.Entity;
-    using Microsoft.Framework.Logging;
+    using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.Logging;
 
     public class Startup
     {
@@ -34,22 +29,11 @@ namespace ManyToManyDemo
             services.AddTransient<Seeder>();
 
             services.AddLogging();
-
-            bool sqlServer = false;
-
-            if (sqlServer)
-            {
-                services.AddEntityFramework()
+    
+            services.AddEntityFramework()
                     .AddSqlServer()
                     .AddDbContext<DemoContext>(
                         o => o.UseSqlServer(@"Server=.\SQLEXPRESS;Database=ManyToManyDemo;integrated security=True;"));
-            }
-            else
-            {
-                services.AddEntityFramework()
-                    .AddInMemoryDatabase()
-                    .AddDbContext<DemoContext>(o => o.UseInMemoryDatabase());
-            }
 
             services.AddMvc();
         }

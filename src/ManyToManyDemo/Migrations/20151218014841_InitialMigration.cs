@@ -21,6 +21,7 @@ namespace ManyToManyDemo.Migrations
                 {
                     table.PrimaryKey("PK_Course", x => x.Id);
                 });
+
             migrationBuilder.CreateTable(
                 name: "Student",
                 columns: table => new
@@ -33,6 +34,7 @@ namespace ManyToManyDemo.Migrations
                 {
                     table.PrimaryKey("PK_Student", x => x.Id);
                 });
+
             migrationBuilder.CreateTable(
                 name: "StudentCourse",
                 columns: table => new
@@ -47,20 +49,37 @@ namespace ManyToManyDemo.Migrations
                         name: "FK_StudentCourse_Course_CourseId",
                         column: x => x.CourseId,
                         principalTable: "Course",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_StudentCourse_Student_StudentId",
                         column: x => x.StudentId,
                         principalTable: "Student",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentCourse_CourseId",
+                table: "StudentCourse",
+                column: "CourseId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StudentCourse_StudentId",
+                table: "StudentCourse",
+                column: "StudentId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropTable("StudentCourse");
-            migrationBuilder.DropTable("Course");
-            migrationBuilder.DropTable("Student");
+            migrationBuilder.DropTable(
+                name: "StudentCourse");
+
+            migrationBuilder.DropTable(
+                name: "Course");
+
+            migrationBuilder.DropTable(
+                name: "Student");
         }
     }
 }

@@ -11,8 +11,6 @@ namespace ManyToManyDemo.Data
 
         public string Name { get; set; }
 
-        public ICollection<Course> Courses { get; set; } = new List<Course>();
-
         public ICollection<StudentCourse> StudentCourses { get; set; } = new List<StudentCourse>();
     }
 }
